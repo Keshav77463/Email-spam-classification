@@ -3,6 +3,8 @@ from imblearn.over_sampling import SMOTE
 import re
 from sklearn.model_selection import train_test_split
 from sklearn.feature_extraction.text import TfidfVectorizer
+from sklearn.naive_bayes import MultinomialNB
+from sklearn.metrics import confusion_matrix, classification_report, accuracy_score
 
 df = pd.read_csv("data/spam.csv", encoding="latin-1")
 print(df.head())
@@ -38,3 +40,10 @@ X_test_vec  = vectorizer.transform(X_test)
 print(X_train_vec.shape)
 print(X_test_vec.shape)
 
+nb_model = MultinomialNB()
+nb_model.fit(X_train_vec, y_train)
+y_pred = nb_model.predict(X_test_vec)
+
+print("Accuracy:", accuracy_score(y_test, y_pred))
+print(confusion_matrix(y_test, y_pred))
+print(classification_report(y_test, y_pred))
