@@ -1,0 +1,13 @@
+data:
+  url: "https://raw.githubusercontent.com/Keshav77463/Email-spam-classification/main/data/spam.csv"
+
+split:
+  test_size: 0.2
+  random_state: 42
+
+tfidf:
+  max_features: 3000
+  stop_words: "english"
+
+model:
+  alpha: 0.1
