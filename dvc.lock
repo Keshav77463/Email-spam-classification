@@ -1,0 +1,18 @@
+schema: '2.0'
+stages:
+  train_pipeline:
+    cmd: python main.py
+    deps:
+    - path: config.yaml
+      hash: md5
+      md5: 75eee8d6c66ad837dd8807625333e369
+      size: 237
+    - path: main.py
+      hash: md5
+      md5: f0557340dece0d9a14605326bdba12dc
+      size: 1147
+    - path: src
+      hash: md5
+      md5: def4e888ffa29afac40179a1c76135db.dir
+      size: 503449
+      nfiles: 11

@@ -1,0 +1,7 @@
+stages:
+  train_pipeline:
+    cmd: python main.py
+    deps:
+      - main.py
+      - src
+      - config.yaml
