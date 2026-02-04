@@ -2,14 +2,18 @@ import logging
 import pandas as pd
 from sklearn.model_selection import train_test_split
 from sklearn.feature_extraction.text import TfidfVectorizer
+from typing import Optional
 
 logger = logging.getLogger("data_preprocessing")
 
 
 def preprocess_and_vectorize(
     df: pd.DataFrame,
-    test_size: float = 0.2,
-    random_state: int = 42
+    test_size: float ,
+    random_state: int,
+    max_features: int,
+    stop_words: Optional[str],
+
 ):
     """
     Preprocess data and apply TF-IDF vectorization.
